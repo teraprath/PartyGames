@@ -6,10 +6,12 @@
     <parent>
         <groupId>dev.teraprath</groupId>
         <artifactId>PartyGames</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
-    <artifactId>api</artifactId>
+    <artifactId>party-games-api</artifactId>
+    <packaging>jar</packaging>
+    <name>PartyGamesAPI</name>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
