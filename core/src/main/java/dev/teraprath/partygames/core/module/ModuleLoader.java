@@ -86,6 +86,7 @@ public class ModuleLoader {
                     PartyModule module = (PartyModule) constructor.newInstance();
 
                     module.initialize(moduleDescription, plugin);
+                    module.onLoad();
 
                     plugin.getLogger().info("Successfully loaded module: " + name + " v" + version);
                     loadedModules.add(module);

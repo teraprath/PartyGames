@@ -1,9 +1,9 @@
-package dev.teraprath.example;
+package dev.teraprath.another;
 
 import dev.teraprath.partygames.api.module.PartyModule;
 import net.kyori.adventure.text.Component;
 
-public class ExampleModule extends PartyModule {
+public class AnotherModule extends PartyModule {
 
     @Override
     public void onLoad() {
