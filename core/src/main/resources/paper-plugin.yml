@@ -1,0 +1,8 @@
+name: PartyGames
+version: '1.0.0'
+main: dev.teraprath.partygames.core.PartyGamesCore
+description: Minigames in Minecraft
+api-version: '1.21'
+authors:
+  - teraprath
+website: https://teraprath.dev

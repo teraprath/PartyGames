@@ -1,23 +1,26 @@
 package dev.teraprath.partygames.core;
 
-import dev.teraprath.partygames.api.addon.Addon;
-import dev.teraprath.partygames.core.addon.AddonLoader;
+import dev.teraprath.partygames.api.module.PartyModule;
+import dev.teraprath.partygames.core.module.ModuleLoader;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.List;
 
 public class PartyGamesCore extends JavaPlugin {
 
-    private final AddonLoader addonLoader = new AddonLoader(this);
+    private final ModuleLoader moduleLoader = new ModuleLoader(this);
 
     @Override
     public void onEnable() {
 
-        List<Addon> addons = addonLoader.loadAddons();
+        moduleLoader.loadModules();
 
-        for (Addon addon : addons) {
-            getServer().getConsoleSender().sendMessage(addon.toString());
+        for (PartyModule module : moduleLoader.getModules()) {
+            module.onEnable();
         }
+
+    }
+
+    @Override
+    public void onDisable() {
     }
 
 }

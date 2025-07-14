@@ -1,0 +1,6 @@
+name: ExampleModule
+version: 1.0.0
+main: dev.teraprath.example.ExampleModule
+description: A Basic Module for Testing
+author: teraprath
+website: https://teraprath.dev

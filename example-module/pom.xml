@@ -9,12 +9,36 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>party-games-api</artifactId>
+    <artifactId>example-module</artifactId>
     <packaging>jar</packaging>
-    <name>PartyGamesAPI</name>
+    <name>ExampleModule</name>
 
     <build>
-        <finalName>${project.name}-${project.version}</finalName>
+        <finalName>${project.name}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <minimizeJar>true</minimizeJar>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
 
     <properties>
@@ -42,6 +66,12 @@
             <artifactId>paper-api</artifactId>
             <version>1.21-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <!-- Party API -->
+        <dependency>
+            <groupId>dev.teraprath</groupId>
+            <artifactId>party-games-api</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
